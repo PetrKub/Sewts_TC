@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="PlcTask" Id="{94f8804c-b3d5-4e24-963e-d8671bb70285}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>10000</CycleTime>
+    <Priority>6</Priority>
+    <PouCall>
+      <Name>PLC_PRG</Name>
+    </PouCall>
+    <PouCall>
+      <Name>motor_PRG</Name>
+    </PouCall>
+    <TaskFBGuid>{2ad31ddb-b525-4f41-b32c-3bbd84fac092}</TaskFBGuid>
+    <Fb_init>{d58cebec-cf25-443a-8ce5-becb2c36a44d}</Fb_init>
+    <Fb_exit>{28bfddb8-2aa5-4f48-8344-66d5b1ccd689}</Fb_exit>
+    <CycleUpdate>{d2653117-f055-4f5e-ab94-61e3e1c73a44}</CycleUpdate>
+    <PostCycleUpdate>{78bd49b6-33b7-46d9-a632-66d6945ecf19}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

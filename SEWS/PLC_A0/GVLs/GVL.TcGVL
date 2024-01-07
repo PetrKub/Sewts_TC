@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{eb1c2fde-2fa8-418a-8f7f-81f033c5433b}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+//motor global 
+	motor1: motorDUT; 
+	motor2: motorDUT;
+// GUI
+	StartStop: bool; //start and stop process  
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

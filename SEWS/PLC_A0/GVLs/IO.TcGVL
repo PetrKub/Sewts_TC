@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="IO" Id="{fcdbf4e2-f3e0-4e86-8bb7-3651d71375ce}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+//inputs 
+	A1_DI0 AT %I* : BOOL;	// safety
+	A1_DI1 AT %I* : BOOL;	// cylinder sensor
+	A1_DI2 AT %I* : BOOL;	// 1. Endpoint senzor - M1
+	A1_DI3 AT %I* : BOOL;	// 2. Endpoint senzor - M1
+	A1_DI4 AT %I* : BOOL;
+	A1_DI5 AT %I* : BOOL;
+	A1_DI6 AT %I* : BOOL;
+	A1_DI7 AT %I* : BOOL;
+
+	//output
+	A2_DO0 AT %Q* : BOOL;	// start motor 1
+	A2_DO1 AT %Q* : BOOL;	// direction motor 1
+	A2_DO2 AT %Q* : BOOL;	// start motor 2
+	A2_DO3 AT %Q* : BOOL;	//gripper finger
+	A2_DO4 AT %Q* : BOOL;
+	A2_DO5 AT %Q* : BOOL;
+	A2_DO6 AT %Q* : BOOL;
+	A2_DO7 AT %Q* : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

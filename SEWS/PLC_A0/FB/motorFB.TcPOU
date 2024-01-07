@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="motorFB" Id="{2b458cf7-47ba-4a1d-93c9-020cebc90995}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK motorFB
+VAR_INPUT
+	En: BOOL; //motor start/stop 
+	Vmax: REAL; //max velocity (un/sec)
+	Amax: REAL; //max acceleration (un/sec^2)
+	Dir: BOOL; //actual direction
+	ResetPos: BOOL; //reseting position
+	SampTim: REAL; //program cycle length (s) ¨
+	EPSetPosition: BOOL; //if true and one of setpoint switch is pressed, set the position of endpoint switch
+	EndPoint1 :BOOL;	//endpoint switch
+	EndPoint2 :BOOL;	//endpoint switch
+	SSetEndPoint1 :INT;		//set position on endpoint 1
+	SSetEndPoint2 :INT; 	//set position on endPoint 2
+END_VAR
+VAR_OUTPUT
+	EnOut: BOOL; //en output for DO
+	DirOut: BOOL; //dir output for DO
+	
+	OnEndpoint1: BOOL; //EP switch is pressed
+	OnEndPoint2: BOOL; //EP switch is pressed 
+	
+	Vact: REAL; //actual velocity(un/sec) 
+	SAct: REAL; // actual position(un) 
+END_VAR
+VAR
+	Vset: REAL; // internal variable for reqzest velocity 
+	
+	trigStart: R_TRIG; //trigger for starting process 
+	trigResetPos: R_TRig; //trigger for reseting position
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[trigStart(clk := en); //start trigger
+trigResetPos (clk := resetPos);
+
+IF trigStart.Q THEN 
+	Vset := Vmax; //count internal value for set velocity 
+END_IF	
+
+if en then 
+	//counting act velocity
+	IF Vset > Vact THEN //accelararion
+		Vact := Vact + (Amax * sampTim);
+	ELSIF Vset < Vact THEN //deceleration
+		Vact := Vact - (Amax * sampTim);
+	ELSE // on set speed (not needed, just for better understanding)
+		Vact := Vset;
+	END_IF
+	
+	//couning actual position
+	IF NOT dir THEN
+		SAct := SAct + (Vact*SampTim);
+	ELSE
+		SAct := SAct - (Vact*SampTim);
+	END_IF	
+//if the motor is turned off, it resets the variables
+ELSE
+	//velocity  
+	Vact := 0;
+	Vset := 0;
+	//position reset 
+	IF trigResetPos.Q THEN
+		Sact := 0;
+	END_IF
+END_IF
+
+//endpoint switches
+IF EPSetPosition THEN
+	IF EndPoint1 THEN 
+		Sact := SSetEndPoint1;
+	ELSIF Endpoint2 THEN
+		Sact := SSetEndPoint2;
+	END_IF
+END_IF
+
+//output
+OnEndpoint1 := EndPoint1; 
+OnEndpoint2 := EndPoint2; 
+
+enOut := en; 
+dirOut := dir; 
+]]></ST>
+    </Implementation>
+    <LineIds Name="motorFB">
+      <LineId Id="39" Count="48" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

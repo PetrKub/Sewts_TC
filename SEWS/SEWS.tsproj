@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.54">
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000c30e0000c30e000010000000100000000000ff00ff00ff00ff000000ffff000000ff000000ffff0000008000800080008000000080800000008000000080800080808000c0c0c000ffffff00000000001111111111111111fffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44ffffffffffffffffffffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44fffffffffffffffff55555511111111115555551111111111555555111111111155555511111111115555551111111111</ImageData>
+		<ImageData Id="1001">424de6000000000000007600000028000000100000000e000000010004000000000070000000c30e0000c30e000010000000100000000000ff00ff00ff00ff000000ffff000000ff000000ffff0000008000800080008000000080800000008000000080800080808000c0c0c000ffffff00000000001111111111111111fffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44ffffffffffffffffffffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44fffffffffffffffff00000011111111110000001111111111000000111111111100000011111111110000001111111111</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{DA04E950-B4B5-4B56-A4AF-087834EBE506}" Target64Bit="true" AutoPrioManagement="true" ShowHideConfigurations="#x6">
+		<System>
+			<Settings MaxCpus="8" NonWinCpus="1">
+				<Cpu CpuId="7"/>
+				<IoIdleTask Priority="4"/>
+			</Settings>
+			<Tasks>
+				<Task Id="3" Priority="6" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{0FC7F19E-3416-4D9E-BB79-61C1B1BEE55F}" Name="PLC_A0" PrjFilePath="PLC_A0\PLC_A0.plcproj" TmcFilePath="PLC_A0\PLC_A0.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC_A0\PLC_A0.tmc" TmcHash="{90991C90-2FE0-41D7-B835-EC64BD062809}">
+					<Name>PLC_A0 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>IO.A1_DI0</Name>
+							<Comment><![CDATA[ safety]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI1</Name>
+							<Comment><![CDATA[ cylinder sensor]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI2</Name>
+							<Comment><![CDATA[ 1. Endpoint senzor - M1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI3</Name>
+							<Comment><![CDATA[ 2. Endpoint senzor - M1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A1_DI7</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>IO.A2_DO0</Name>
+							<Comment><![CDATA[ start motor 1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO1</Name>
+							<Comment><![CDATA[ direction motor 1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO2</Name>
+							<Comment><![CDATA[ start motor 2]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO3</Name>
+							<Comment><![CDATA[gripper finger]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.A2_DO7</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<UnrestoredVarLinks ImportTime="2024-01-07T17:56:02">
+						<OwnerA Name="InputDst" Prefix="TIPC^PLC_A0^PLC_A0 Instance" Type="1">
+							<OwnerB Name="TIID^master EtherCaT^A1">
+								<Link VarA="GVL.A0_DI0" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>6</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="6" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device Id="2" DevType="111" DevFlags="#x0003" AmsPort="28674" AmsNetId="192.168.0.237.3.1" RemoteName="master EtherCaT" InfoImageId="3">
+				<Name>master EtherCaT</Name>
+				<AddressInfo>
+					<TcCom>
+						<ObjectId>#x03010011</ObjectId>
+					</TcCom>
+				</AddressInfo>
+				<Image Id="2" AddrType="9" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box Id="1" BoxType="9099">
+					<Name>A1</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT SlaveType="1" PdiType="#x0304" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03f04052" RevisionNo="#x00120001" RepeatSupport="true" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP1008-0001 8 Ch. Dig. Input 24V, 3ms, M8" Desc="EP1008-0001" PortABoxInfo="#x00ffffff">
+						<SyncMan>001001000000010004000000010001000100001000010000</SyncMan>
+						<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+						<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI0" Index="#x6000" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI1" Index="#x6010" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI2" Index="#x6020" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI3" Index="#x6030" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI4" Index="#x6040" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI5" Index="#x6050" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI6" Index="#x6060" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
+							<Entry Name="A1_DI7" Index="#x6070" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+					</EtherCAT>
+				</Box>
+				<Box Id="2" BoxType="9099">
+					<Name>A2</Name>
+					<ImageId>1001</ImageId>
+					<EtherCAT SlaveType="1" PdiType="#x0304" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07d14052" RevisionNo="#x001303e8" RepeatSupport="true" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP2001-1000 8 Ch. Dig. Output 24V, 0,5A, M8" Desc="EP2001-1000" PortABoxInfo="#x01000001">
+						<SyncMan>000f01004400010003000000010001000100000f44090000</SyncMan>
+						<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+						<Pdo Name="Group 0" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
+							<Entry Name="A2_DO0" Index="#x7000" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="A2_DO1" Index="#x7000" Sub="#x02">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="A2_DO2" Index="#x7000" Sub="#x03">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="A2_DO3" Index="#x7000" Sub="#x04">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Group 1" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+							<Entry Name="A2_DO4" Index="#x7010" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="A2_DO5" Index="#x7010" Sub="#x02">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="A2_DO6" Index="#x7010" Sub="#x03">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="A2_DO7" Index="#x7010" Sub="#x04">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+					</EtherCAT>
+				</Box>
+				<EtherCAT/>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500820000403}" Id="#x02030010"/>
+		<OwnerA Name="TIPC^PLC_A0^PLC_A0 Instance">
+			<OwnerB Name="TIID^master EtherCaT^A1">
+				<Link VarA="PlcTask Inputs^IO.A1_DI0" VarB="Channel 1^A1_DI0"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI1" VarB="Channel 2^A1_DI1"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI2" VarB="Channel 3^A1_DI2"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI3" VarB="Channel 4^A1_DI3"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI4" VarB="Channel 5^A1_DI4"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI5" VarB="Channel 6^A1_DI5"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI6" VarB="Channel 7^A1_DI6"/>
+				<Link VarA="PlcTask Inputs^IO.A1_DI7" VarB="Channel 8^A1_DI7"/>
+			</OwnerB>
+			<OwnerB Name="TIID^master EtherCaT^A2">
+				<Link VarA="PlcTask Outputs^IO.A2_DO0" VarB="Group 0^A2_DO0"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO1" VarB="Group 0^A2_DO1"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO2" VarB="Group 0^A2_DO2"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO3" VarB="Group 0^A2_DO3"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO4" VarB="Group 1^A2_DO4"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO5" VarB="Group 1^A2_DO5"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO6" VarB="Group 1^A2_DO6"/>
+				<Link VarA="PlcTask Outputs^IO.A2_DO7" VarB="Group 1^A2_DO7"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>
