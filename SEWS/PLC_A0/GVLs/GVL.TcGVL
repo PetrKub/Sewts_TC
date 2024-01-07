@@ -7,7 +7,8 @@ VAR_GLOBAL
 	motor1: motorDUT; 
 	motor2: motorDUT;
 // GUI
-	StartStop: bool; //start and stop process  
+	StartStop: BOOL; //start and stop process  
+	systemOK: bool; //true if system is ready
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

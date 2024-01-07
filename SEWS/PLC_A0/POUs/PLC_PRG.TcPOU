@@ -19,7 +19,7 @@ IF NOT gvl.systemOK THEN
 	gvl.motor1.en := FALSE; 	//stopping the motors 
 	gvl.motor2.en := FALSE;
 	
-	gvl.StartStop := false; 	//stopping proces
+	gvl.StartStop := FALSE; 	//stopping proces
 END_IF
 
 //calling program 

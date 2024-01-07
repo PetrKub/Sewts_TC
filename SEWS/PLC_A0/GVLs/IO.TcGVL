@@ -4,7 +4,7 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 //inputs 
-	A1_DI0 AT %I* : BOOL;	// safety
+	A1_DI0 AT %I* : BOOL;	// system OK
 	A1_DI1 AT %I* : BOOL;	// cylinder sensor
 	A1_DI2 AT %I* : BOOL;	// 1. Endpoint senzor - M1
 	A1_DI3 AT %I* : BOOL;	// 2. Endpoint senzor - M1
