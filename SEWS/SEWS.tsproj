@@ -18,14 +18,14 @@
 		</System>
 		<Plc>
 			<Project GUID="{0FC7F19E-3416-4D9E-BB79-61C1B1BEE55F}" Name="PLC_A0" PrjFilePath="PLC_A0\PLC_A0.plcproj" TmcFilePath="PLC_A0\PLC_A0.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC_A0\PLC_A0.tmc" TmcHash="{90991C90-2FE0-41D7-B835-EC64BD062809}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC_A0\PLC_A0.tmc" TmcHash="{34F80D51-DC65-FBE1-537C-15C8A6EE1E4A}">
 					<Name>PLC_A0 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>IO.A1_DI0</Name>
-							<Comment><![CDATA[ safety]]></Comment>
+							<Comment><![CDATA[ system OK]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>

@@ -8,7 +8,11 @@ VAR_GLOBAL
 	motor2: motorDUT;
 // GUI
 	StartStop: BOOL; //start and stop process  
-	systemOK: bool; //true if system is ready
+	systemOK: BOOL; //true if system is ready
+//communication with python 
+	data_1 : INT;
+	data_2 : INT;
+	bit_0 :	BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
