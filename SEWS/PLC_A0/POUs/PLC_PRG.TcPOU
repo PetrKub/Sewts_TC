@@ -9,17 +9,35 @@ VAR
 	trigStart: R_TRIG;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// triggers
+      <ST><![CDATA[//sytem OK
+gvl.systemOK := IO.A1_DI0; 
+// triggers
 trigA0_DI1(clk := IO.A1_DI1);
 trigStart (clk := gvl.StartStop); 
 
+IF NOT gvl.systemOK THEN 
+	gvl.motor1.en := FALSE; 	//stopping the motors 
+	gvl.motor2.en := FALSE;
+	
+	gvl.StartStop := false; 	//stopping proces
+END_IF
 
 //calling program 
-automat_PRG(SFCInit := trigStart.Q);]]></ST>
+automat_PRG(SFCInit := trigStart.Q);
+]]></ST>
     </Implementation>
     <LineIds Name="PLC_PRG">
-      <LineId Id="18" Count="5" />
+      <LineId Id="34" Count="1" />
+      <LineId Id="18" Count="3" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="39" Count="1" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="23" Count="0" />
       <LineId Id="2" Count="0" />
+      <LineId Id="32" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
